@@ -15,4 +15,6 @@
     <li> Fork the project repository </li>
     <li> Clone your fork </li>
     <li> Navigate to your local repository </li>   
+    <li> Make changes in code</li>
+
 </ol>
