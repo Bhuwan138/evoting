@@ -16,5 +16,5 @@
     <li> Clone your fork </li>
     <li> Navigate to your local repository </li>   
     <li> Make changes in code</li>
-
+    <li> Then Create a pull request</li>
 </ol>
