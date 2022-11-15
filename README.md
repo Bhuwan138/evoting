@@ -9,3 +9,10 @@
     <li>Netbeans 8.0 or above </li>
     <li>JDK 8 or above</li>
 </ul>
+
+<h2>How you can contribute in this project?</h2>
+<ol>
+    <li> Fork the project repository </li>
+    <li> Clone your fork </li>
+    <li> Navigate to your local repository </li>   
+</ol>
