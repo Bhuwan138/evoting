@@ -11,6 +11,6 @@
     String userName = (String)request.getAttribute("userName");
     
     if(isUserFound) out.println("uap");
-    else if(result) out.println("sucess");
+    else if(result) out.println("success");
     else out.println("error");
 %>

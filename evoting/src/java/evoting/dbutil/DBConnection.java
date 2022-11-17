@@ -24,6 +24,7 @@ public class DBConnection {
             String userName = "evoting_db";
             String password = "evoting";
             conn = DriverManager.getConnection(url,userName,password);
+            System.out.println("User connected Sucessfully");
         }catch(ClassNotFoundException | SQLException exception){
             exception.printStackTrace();
         }

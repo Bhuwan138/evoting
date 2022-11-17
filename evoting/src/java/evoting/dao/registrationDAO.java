@@ -17,8 +17,8 @@ public class RegistrationDAO {
     private static PreparedStatement psForSearch,psForInsert;
     static{
         try{
-            psForSearch = DBConnection.getConnection().prepareStatement("SELECT 1 FROM user_details where ctzn_no = ?");
-            psForInsert = DBConnection.getConnection().prepareStatement("INSERT INTO user_details VALUES(?,?,?,?,?,?,?,?)");
+            psForSearch = DBConnection.getConnection().prepareStatement("SELECT * FROM user_details where ctzn_no = ?");
+            psForInsert = DBConnection.getConnection().prepareStatement("INSERT INTO user_details values(?,?,?,?,?,?,?,?)");
         }catch(SQLException se){
             se.printStackTrace();
         }
