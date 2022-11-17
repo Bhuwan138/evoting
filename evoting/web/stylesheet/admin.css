@@ -1,0 +1,18 @@
+.container {
+  text-align:center;
+  padding-top: 12%;
+}
+#dv1, #dv2, #dv3, #dv4 {
+  display:inline-block;
+  width:20%;
+  margin:0 4px;
+}
+h1, h2, h3, h4, h5, h6{
+    color: white;
+}
+th, tr, td{
+    color: white;
+}
+th{
+    text-align: right;
+}
