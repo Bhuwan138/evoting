@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author Bhuwan Pandey
  */
-public class registrationDAO {
+public class RegistrationDAO {
     private static PreparedStatement psForSearch,psForInsert;
     static{
         try{
