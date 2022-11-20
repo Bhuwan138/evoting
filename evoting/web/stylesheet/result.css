@@ -1,0 +1,27 @@
+.table-striped tbody tr:nth-child(odd) td {
+    background-color: #81DAF5;
+}
+
+.table-striped tbody tr:nth-child(even) td {
+    background-color: #CEECF5;
+}
+
+.table-striped tbody tr.highlight td {
+    background-color: #F2F5A9;
+}
+tr{
+    background-color: #ff6666;
+    
+}
+#tr1
+{
+    background-color: green;
+}
+th{
+    background-color: black;
+}
+td,th{
+    text-align: center;
+}
+/*
+//background-color: #ff6666;*/

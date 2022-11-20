@@ -14,7 +14,6 @@ import java.sql.SQLException;
  */
 public class DBConnection {
     private static Connection conn = null;
-    
     static{
         try{
             //loading driver
@@ -25,6 +24,7 @@ public class DBConnection {
             String userName = "evoting_db";
             String password = "evoting";
             conn = DriverManager.getConnection(url,userName,password);
+
         }catch(ClassNotFoundException | SQLException exception){
             exception.printStackTrace();
         }
