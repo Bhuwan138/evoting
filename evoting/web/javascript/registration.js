@@ -46,7 +46,7 @@ function addUser(){
                 });
             
             // handling the xhr error 
-            xhr.error((xhr) => {
+            xhr.fail((xhr) => {
                 swal("Error!","Problem in server communication : "+ xhr.statusText,"error");
             });
 
