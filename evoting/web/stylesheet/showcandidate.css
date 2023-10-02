@@ -11,6 +11,7 @@ div.candidateprofile
  
 .buttons {
 	margin-top: 160px;
+
 }
 .buttons a {
 	margin-right: 30px;
@@ -62,5 +63,9 @@ div.candidateprofile
  
 .buttons a:hover::before {
 	opacity: 1;
+}
+
+.listGrps{
+    display: flex;
 }
 

@@ -8,7 +8,6 @@ function connectUser(){
             userId : userId,
             password : password 
         };
-
         let xhr = $.post("LoginControllerServlet", data,
             function (responseText, textStatus, jqXHR) {
                 console.log(responseText);

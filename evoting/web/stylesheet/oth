@@ -1,0 +1,11 @@
+
+//"    <div id='dv2' onclick='redirectVotingPage()'>                                                      "+
+//                "        <img src='images/votingimage.jpg' alt='administrator' height='300px' width='300px'> <br>       "+
+//                "        <h3>Voting Options</h3>                                                                        "+
+//                "    </div>    
+
+
+"<div id='dv2' onclick='showUpdateCandidateForm()'>  <img src='images/update1.jpg'  height='255px' width='255px'> <br> <h3>Update Candidate</h3> </div>    "+
+                
+"<div id='dv4' onclick='deleteCandidate()'>  <img src='images/delete.jpg'  height='255px' width='255px'> <br> <h3>Delete Candidate</h3> </div>         "+
+               

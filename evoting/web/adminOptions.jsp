@@ -27,7 +27,7 @@
             StringBuffer displayBlock = new StringBuffer();
             displayBlock.append(""+
             "   <div class ='sticky'>                                               "+
-            "   <div class ='candidate' > Vote for Change </div> <br>               "+
+            "   <div class ='candidate' > E-Voting System </div> <br>               "+
             "   <div class='subcandidate'>Admin Actions Page</div> <br><br>         "+
             "   <div class='logout'> <a href='login.html'>logout</a> </div>         "+
             "   </div>");
@@ -38,10 +38,6 @@
                 "        <img src='images/administrator.png' alt='administrator' height='300px' width='300px'> <br>     "+
                 "        <h3>Admin Options</h3>                                                                         "+
                 "    </div>                                                                                             "+
-                "    <div id='dv2' onclick='redirectVotingPage()'>                                                      "+
-                "        <img src='images/votingimage.jpg' alt='administrator' height='300px' width='300px'> <br>       "+
-                "        <h3>Voting Options</h3>                                                                        "+
-                "    </div>                                                                                             "+
                 "</div>                                                                                                 "+
                 "<br><br>                                                                                               "+
                 "<div id='result' align='center'></div>");
@@ -49,3 +45,5 @@
         %>
     </body>
 </html>
+                                                                                         "+
+                

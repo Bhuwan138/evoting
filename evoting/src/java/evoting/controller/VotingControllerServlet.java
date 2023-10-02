@@ -4,12 +4,18 @@
  */
 package evoting.controller;
 
+import evoting.dao.CandidateDAO;
+import evoting.dao.VoteDAO;
+import evoting.dto.CandidateInfoDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -17,29 +23,39 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class VotingControllerServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet VotingControllerServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet VotingControllerServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        RequestDispatcher rd = null;
+        HttpSession sess = request.getSession();
+        String userId = (String) sess.getAttribute("userId");
+        if(userId == null){
+           sess.invalidate();
+           response.sendRedirect("accessdenied.html");
+        }
+        
+        try{
+            String candidateId = VoteDAO.getCandidateId(userId);
+            
+            
+//            if not vote
+            if(candidateId == null){
+                List<CandidateInfoDTO> candidateList = CandidateDAO.viewCandiate(userId);
+                request.setAttribute("candidateList", candidateList);
+                rd = request.getRequestDispatcher("showCandidate.jsp");
+            }else{
+                CandidateInfoDTO candidate = VoteDAO.getVote(candidateId);
+                request.setAttribute("candidate", candidate);
+                rd = request.getRequestDispatcher("voteDenied.jsp");  
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+            request.setAttribute("errorPage", ex);
+            rd = request.getRequestDispatcher("ShowError.jsp");
+        }
+        
+        finally{
+            rd.forward(request, response);
         }
     }
 

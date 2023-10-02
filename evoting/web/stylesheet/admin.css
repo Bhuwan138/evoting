@@ -4,7 +4,7 @@
 }
 #dv1, #dv2, #dv3, #dv4 {
   display:inline-block;
-  width:20%;
+  width:20%; 
   margin:0 4px;
 }
 h1, h2, h3, h4, h5, h6{
@@ -15,4 +15,19 @@ th, tr, td{
 }
 th{
     text-align: right;
+}
+
+#candidateForm{
+    display: inline-block;
+    color: #fff;
+    border: 2px solid red;
+    padding: 20px;
+    background-color: red;
+    align-items: center;
+}
+
+#result{
+    align-items: center;
+    background-color: red;
+    
 }

@@ -4,43 +4,57 @@
  */
 package evoting.controller;
 
-import evoting.dao.UserDAO;
-import evoting.dto.UserDTO;
+import evoting.dao.VoteDAO;
+import evoting.dto.CandidateInfoDTO;
+import evoting.dto.VoteDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-public class LoginControllerServlet extends HttpServlet {
+/**
+ *
+ * @author Bhuwan Pandey
+ */
+public class AddVoteControllerServlet extends HttpServlet {
 
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher rd = null;
-        
-        String userId=request.getParameter("userId");
-        String password=request.getParameter("password");
-        UserDTO user=new UserDTO(userId,password);
+        HttpSession sess = request.getSession();
+        String userId = (String) sess.getAttribute("userId");
+        if(userId == null){
+           sess.invalidate();
+           response.sendRedirect("accessdenied.html");
+           return;
+        }
         try{
-            String result=UserDAO.validateUser(user);
+            String candidateId = (String)request.getParameter("candidateId");
+            VoteDTO vote = new VoteDTO(candidateId,userId);
+            boolean result = VoteDAO.addVote(vote);
+            CandidateInfoDTO candidate =  VoteDAO.getVote(candidateId);
+            // sending to js then js cal another jsp for this reason we set candidate in session object
+            if(result)
+                sess.setAttribute("candidate", candidate);
             request.setAttribute("result", result);
-            request.setAttribute("userId", userId);
-            rd=request.getRequestDispatcher("LoginResponse.jsp");            
+            rd = request.getRequestDispatcher("verifyVote.jsp");
+            
+        }catch(Exception ex){
+            ex.printStackTrace();
+            request.setAttribute("errorPage", ex);
+            rd = request.getRequestDispatcher("ShowError.jsp");
         }
-        catch(SQLException e)
-        {
-            request.setAttribute("exception", e);
-            rd=request.getRequestDispatcher("ShowError.jsp");
-            e.printStackTrace();
-        }
-        finally
-        {
+        
+        finally{
             rd.forward(request, response);
-        }          
+        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

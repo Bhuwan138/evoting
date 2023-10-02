@@ -1,9 +1,3 @@
-<%-- 
-    Document   : LoginResponse
-    Created on : Nov 19, 2022, 2:42:49 PM
-    Author     : Bhuwan Pandey
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     String userId = (String)request.getAttribute("userId");

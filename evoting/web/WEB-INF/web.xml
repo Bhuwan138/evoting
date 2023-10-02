@@ -16,6 +16,26 @@
         <servlet-name>VotingControllerServlet</servlet-name>
         <servlet-class>evoting.controller.VotingControllerServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddCandidateControllerServlet</servlet-name>
+        <servlet-class>evoting.controller.AddCandidateControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddNewCandidateControllerServlet</servlet-name>
+        <servlet-class>evoting.controller.AddNewCandidateControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowCandidateControllerServlet</servlet-name>
+        <servlet-class>evoting.controller.ShowCandidateControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddVoteControllerServlet</servlet-name>
+        <servlet-class>evoting.controller.AddVoteControllerServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ElectionResultControllerServlet</servlet-name>
+        <servlet-class>evoting.controller.ElectionResultControllerServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegistrationControllerServlet</servlet-name>
         <url-pattern>/RegistrationControllerServlet</url-pattern>
@@ -31,6 +51,26 @@
     <servlet-mapping>
         <servlet-name>VotingControllerServlet</servlet-name>
         <url-pattern>/VotingControllerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddCandidateControllerServlet</servlet-name>
+        <url-pattern>/AddCandidateControllerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddNewCandidateControllerServlet</servlet-name>
+        <url-pattern>/AddNewCandidateControllerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowCandidateControllerServlet</servlet-name>
+        <url-pattern>/ShowCandidateControllerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddVoteControllerServlet</servlet-name>
+        <url-pattern>/AddVoteControllerServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ElectionResultControllerServlet</servlet-name>
+        <url-pattern>/ElectionResultControllerServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -27,16 +27,16 @@
             StringBuffer displayBlock = new StringBuffer();
             displayBlock.append(""+
             "   <div class ='sticky'>                                               "+
-            "   <div class ='candidate' > Vote for Change </div> <br>               "+
+            "   <div class ='candidate' > E-Voting System </div> <br>               "+
             "   <div class='subcandidate'>Admin Actions Page</div> <br><br>         "+
             "   <div class='logout'> <a href='login.html'>logout</a> </div>         "+
             "   </div>");
 
             displayBlock.append(""+
                 "<div class='container'> "+
-                "<div id='dv1' onclick='manageUser()'>  <img src='images/muser.png'  height='255px' width='255px'> <br> <h3>Admin Options</h3> </div>                   "+
+                "<div id='dv1' onclick='manageUser()'>  <img src='images/muser.png'  height='255px' width='255px'> <br> <h3>Users Options</h3> </div>                   "+
                 "<div id='dv2' onclick='manageCandidate()'>  <img src='images/ManageCandLists.jpg'  height='255px' width='255px'> <br> <h3>Admin Options</h3> </div>    "+
-                "<div id='dv3' onclick='electionResult()'>  <img src='images/resultgraph.jpg'  height='255px' width='255px'> <br> <h3>Admin Options</h3> </div>         "+
+                "<div id='dv3' onclick='electionResult()'>  <img src='images/resultgraph.jpg'  height='255px' width='255px'> <br> <h3>Result Options</h3> </div>         "+
                 " <br><br> <div id='result' align='center'></div> </div>");
             out.println(displayBlock);
         %>
